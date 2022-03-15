@@ -131,7 +131,7 @@ namespace ConsoleKeypad
 
             if (flags.HasFlag(Indicator.ACPower))
                 lbls.Add("AC", ConsoleColor.Green);
-            else
+            else if (!flags.HasFlag(Indicator.ProgramMode))
                 lbls.Add("AC", ConsoleColor.Red);
 
             if (flags.HasFlag(Indicator.ChimeEnabled))
@@ -150,6 +150,9 @@ namespace ConsoleKeypad
 
             if (flags.HasFlag(Indicator.SystemReady))
                 lbls.Add("READY", ConsoleColor.Green);
+
+            if ((flags & (Indicator.ArmedAway | Indicator.ArmedInstant | Indicator.ArmedStay)) != 0 )
+                lbls.Add("ARMED", ConsoleColor.Red);
 
             return lbls;
         }

@@ -14,7 +14,7 @@ Once you have that installed, download the project files and run the [dotnet bui
 
 The parameters for the application are the password for the user account and optionally the hostname or IP address for the EnvisaLink module.
 
-`Usage: AlarmKeypad <pwd> [host]`
+`Usage: ConsoleKeypad <pwd> [host]`
 
 Once connected, it will display a single line with alphanumeric messages from the alarm panel along with status indicators.
 
